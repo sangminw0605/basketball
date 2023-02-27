@@ -1,5 +1,6 @@
 import Header from './header.js';
 import Progress from './prog.js';
+import Table from './table.js';
 
 function Sidebar() {
     return (
