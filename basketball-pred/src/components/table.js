@@ -1,30 +1,90 @@
-function table() {
-    return(
-<div style={{ "padding-left": '400px'}}>
-    <table class="text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-            <tr>
-                <th scope="col" class="px-6 py-3">
-                    Product name
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Win %
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Boston Celtics
-                </th>
-                <td class="px-6 py-4">
-                    63
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+import celtics from '../celts.png';
+import sixers from '../sixers.png';
+import pelicans from '../pelicans.png';
+import knicks from '../knicks.png';
+import bucks from '../bucks.png';
+import suns from '../suns.png';
+
+function Table() {
+    return (
+        <div style={{ "padding-left": '400px' }}>
+            <div class="col-start-1 col-end-2 text-lg font-extrabold">
+                Saturday, February 25th
+            </div>
+            <div class="grid grid-cols-4 gap-4">
+
+
+                <div class="flex flex-row max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+
+                    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                        <div class="flex flex-col">
+                            <img class="w-25 h-25" src={celtics} />
+
+                            <h3 class="font-normal text-white dark:text-white">Boston Celtics</h3>
+                            <p class="font-normal text-white dark:text-white ">63%</p>
+
+                        </div>
+                        <div class="flex flex-col">
+                            <img class="w-25 h-25" src={sixers} />
+
+                            <p class="font-normal text-gray-700 dark:text-white">Philadelphia 76ers</p>
+                            <p class="font-normal text-gray-700 dark:text-white">37%</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-row max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                        <div class="flex flex-col">
+                            <img class="w-25 h-25" src={knicks} />
+
+                            <h3 class="font-normal text-white dark:text-white">New York Knicks</h3>
+                            <p class="font-normal text-white dark:text-white ">51%</p>
+
+                        </div>
+
+                        <div class="flex flex-col">
+                            <img class="w-25 h-25" src={pelicans} />
+
+                            <p class="font-normal text-gray-700 dark:text-white">New Orleans Pelicans</p>
+                            <p class="font-normal text-gray-700 dark:text-white">49%</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-start-2 col-end-3 text-lg font-extrabold">
+                Sunday, February 26th
+            </div>
+            <div class="grid grid-cols-4 gap-4">
+
+
+                <div class="flex flex-row max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                        <div class="flex flex-col">
+                            <img class="w-25 h-25" src={suns} />
+
+                            <h3 class="font-normal text-white dark:text-white">Phoenix Suns</h3>
+                            <p class="font-normal text-white dark:text-white ">70%</p>
+
+                        </div>
+
+                        <div class="flex flex-col">
+                            <img class="w-25 h-25" src={bucks} />
+
+                            <p class="font-normal text-gray-700 dark:text-white">Milwaukee Bucks</p>
+                            <p class="font-normal text-gray-700 dark:text-white">30%</p>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 }
 
-export default table;
+export default Table;
