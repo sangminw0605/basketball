@@ -1,27 +1,46 @@
-import './App.css';
-import Footer from './components/footer.js';
-import Progress from './components/prog.js';
+import { Route, Routes, Link } from "react-router-dom";
+import React, { Component } from "react";
 
+import csvFile from './win_predictions.csv';
+import Papa from 'papaparse';
 import { Helmet } from 'react-helmet';
-
 import Table from './components/table.js';
 
-import Sidebar from './components/sidebar.js';
+class App extends Component {
+  state = {
+    games: []
+  }
+
+  componentDidMount() {
+    let temp = [];
+    Papa.parse(csvFile, {
+      download: true,
+      step: function (row) {
+        temp.push(row.data)
+      },
+    });
+    this.setState(() => ({
+      games: temp
+    }));
+  }
 
 
-function App() {
-  return (
-    <div className="App">
-      <Helmet>
-        <style>{'body { background-color: #dadada; }'}</style>
-      </Helmet>
+  render() {
 
-      <Sidebar />
-      <Progress />
-      <Table />
-      
-    </div>
-  );
+    //console.log(this.state.games);
+
+
+    return (
+      <div className="App">
+        <Helmet>
+          <style>{'body { background-color: #dadada; }'}</style>
+        </Helmet>
+
+        <Table games={this.state.games} />
+
+      </div>
+    );
+  }
 }
 
 export default App;

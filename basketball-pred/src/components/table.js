@@ -1,90 +1,72 @@
-import celtics from '../celts.png';
-import sixers from '../sixers.png';
-import pelicans from '../pelicans.png';
-import knicks from '../knicks.png';
-import bucks from '../bucks.png';
-import suns from '../suns.png';
+import Game from './game';
+import React, { Component } from "react";
 
-function Table() {
-    return (
-        <div style={{ "padding-left": '400px' }}>
-            <div class="col-start-1 col-end-2 text-lg font-extrabold">
-                Saturday, February 25th
+
+class Table extends Component {
+    constructor(props) {
+        super(props);
+        console.log(props);
+
+        this.state = {
+            games: []
+        }
+    }
+
+    componentDidMount() {
+        this.setState(() => ({
+          games: this.props.games
+        }));
+      }
+
+    render() {
+        return (
+            <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" className="px-6 py-3">
+                                Teams
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                Date
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                Predicted Winner
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <Game info={this.props.games[0]} />
+                        <Game info={this.props.games[1]} />
+                        <Game info={this.props.games[2]} />
+                        <Game info={this.props.games[3]} />
+                        <Game info={this.props.games[4]} />
+                        <Game info={this.props.games[5]} />
+                        <Game info={this.props.games[6]} />
+                        <Game info={this.props.games[7]} />
+                        <Game info={this.props.games[8]} />
+                        <Game info={this.props.games[9]} />
+                        <Game info={this.props.games[10]} />
+                        <Game info={this.props.games[11]} />
+                        <Game info={this.props.games[12]} />
+                        <Game info={this.props.games[13]} />
+                        <Game info={this.props.games[14]} />
+                        <Game info={this.props.games[15]} />
+                        <Game info={this.props.games[16]} />
+                        <Game info={this.props.games[17]} />
+                        <Game info={this.props.games[18]} />
+                        <Game info={this.props.games[19]} />
+                        <Game info={this.props.games[20]} />
+                        <Game info={this.props.games[21]} />
+                        <Game info={this.props.games[22]} />
+                        <Game info={this.props.games[23]} />
+                        <Game info={this.props.games[24]} />
+                        <Game info={this.props.games[25]} />
+                    </tbody>
+                </table>
             </div>
-            <div class="grid grid-cols-4 gap-4">
-
-
-                <div class="flex flex-row max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-
-                    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                        <div class="flex flex-col">
-                            <img class="w-25 h-25" src={celtics} />
-
-                            <h3 class="font-normal text-white dark:text-white">Boston Celtics</h3>
-                            <p class="font-normal text-white dark:text-white ">63%</p>
-
-                        </div>
-                        <div class="flex flex-col">
-                            <img class="w-25 h-25" src={sixers} />
-
-                            <p class="font-normal text-gray-700 dark:text-white">Philadelphia 76ers</p>
-                            <p class="font-normal text-gray-700 dark:text-white">37%</p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex flex-row max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                        <div class="flex flex-col">
-                            <img class="w-25 h-25" src={knicks} />
-
-                            <h3 class="font-normal text-white dark:text-white">New York Knicks</h3>
-                            <p class="font-normal text-white dark:text-white ">51%</p>
-
-                        </div>
-
-                        <div class="flex flex-col">
-                            <img class="w-25 h-25" src={pelicans} />
-
-                            <p class="font-normal text-gray-700 dark:text-white">New Orleans Pelicans</p>
-                            <p class="font-normal text-gray-700 dark:text-white">49%</p>
-
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-            <div class="col-start-2 col-end-3 text-lg font-extrabold">
-                Sunday, February 26th
-            </div>
-            <div class="grid grid-cols-4 gap-4">
-
-
-                <div class="flex flex-row max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                        <div class="flex flex-col">
-                            <img class="w-25 h-25" src={suns} />
-
-                            <h3 class="font-normal text-white dark:text-white">Phoenix Suns</h3>
-                            <p class="font-normal text-white dark:text-white ">70%</p>
-
-                        </div>
-
-                        <div class="flex flex-col">
-                            <img class="w-25 h-25" src={bucks} />
-
-                            <p class="font-normal text-gray-700 dark:text-white">Milwaukee Bucks</p>
-                            <p class="font-normal text-gray-700 dark:text-white">30%</p>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
+        );
+    }
 }
 
 export default Table;
